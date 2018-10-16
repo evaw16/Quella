@@ -19,13 +19,10 @@
       <div class="container-fluid">
         <div class="collapse navbar-collapse fixed-on-top" id="navcol-1">
           <ul class="nav navbar-nav">
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Keranjang</a></li>
-            <li role="presentation"><a href="#">Transaksi</a></li>
-          </li>
+            <li role="presentation"><a href="index.php">Home</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </div>
 </div>
 <center style="font-size:35px;">Meccanism</center>
@@ -40,19 +37,15 @@
     </div>
   </div>
   <br>
-  </center>
-  <div class="form" style="margin-left:400px;">
-    <form class="" action="index.html" method="post">
-      <label for="">Jumlah Pemesanan</label><br>
-      <input type="number" name="jumlah" value="" placeholder="Jumlah Pemesanan">
-    </form>
-    <form class="" action="index.html" method="post">
-      <label for="">Pilih Warna</label><br>
-      <input type="number" name="jumlah" value="" placeholder="Jumlah Pemesanan">
-    </form>
-  </div>
+</center>
 
-
-
+<script>
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
 
 </body>
+</html>

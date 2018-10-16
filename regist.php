@@ -14,12 +14,12 @@
       <br><br>Daftar akun baru sekarang
       <br><br><br>
       <div class="form">
-        <form class="" action="index.html" method="post">
+        <form class="" action="index.php" method="post">
           <label for=""></label>
           <input type="text" name="fname" value="" placeholder="Nama Lengkap">
         </form>
         <br>
-        <form class="" action="index.html" method="post">
+        <form class="" action="index.php" method="post">
           <label for=""></label>
           <input type="text" name="hp" value="" placeholder="Email atau Nomor Handphone">
         </form>
@@ -28,12 +28,12 @@
         <input type="radio" name="radio" value=""> Perempuan
         <br>
         <br>
-        <form class="" action="index.html" method="post">
+        <form class="" action="index.php" method="post">
           <label for=""></label>
           <input type="password" name="pass" value="" placeholder="Password">
         </form>
         <br>
-        <form class="" action="index.html" method="post">
+        <form class="" action="index.php" method="post">
           <label for=""></label>
           <input type="password" name="passc" value="" placeholder="Konfirmasi Password">
         </form>
@@ -42,3 +42,5 @@
       </div>
   </div>
 </center>
+</body>
+</html>
