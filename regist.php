@@ -1,3 +1,6 @@
+<?php
+require_once 'init.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,35 +15,60 @@
   <div class="register">
     <body><img src="assets/img/1-1.png" id="aa" width="20%">
       <br><br>Daftar akun baru sekarang
-      <br><br><br>
+      <br><br>
       <div class="form">
         <form class="" action="index.php" method="post">
           <label for=""></label>
-          <input type="text" name="fname" value="" placeholder="Nama Lengkap">
+          <input type="text" name="name" value="" placeholder="Nama" required>
         </form>
         <br>
         <form class="" action="index.php" method="post">
           <label for=""></label>
-          <input type="text" name="hp" value="" placeholder="Email atau Nomor Handphone">
-        </form>
-        <br>
-        <input type="radio" name="radio" value=""> Laki-laki
-        <input type="radio" name="radio" value=""> Perempuan
-        <br>
-        <br>
-        <form class="" action="index.php" method="post">
-          <label for=""></label>
-          <input type="password" name="pass" value="" placeholder="Password">
+          <input type="text" name="username" value="" placeholder="Username" required>
         </form>
         <br>
         <form class="" action="index.php" method="post">
           <label for=""></label>
-          <input type="password" name="passc" value="" placeholder="Konfirmasi Password">
+          <input type="password" name="pass" value="" placeholder="Password" required>
         </form>
         <br>
-        <input type="submit" name="" value="DAFTAR">
+        <form class="" action="index.php" method="post">
+          <label for=""></label>
+          <input type="email" name="email" value="" placeholder="Email" required>
+        </form>
+        <br>
+        <form class="" action="index.php" method="post">
+          <label for=""></label>
+          <input type="number" name="hp" value="" placeholder="Nomor Handphone" required>
+        </form>
+        <br>
+        <br>
+
+        <input type="submit" name="submit" value="DAFTAR">
       </div>
-  </div>
-</center>
+    </div>
+  </center>
 </body>
 </html>
+
+<?php
+if ($_POST['submit']) {
+  $nama = $_POST['name'];
+  $username = $_POST['username'];
+  $password = md5 ($_POST['password']);
+  $email = $_POST['email'];
+  $notelp = $_POST['notelp'];
+  $level = 2;
+
+  $sql = "INSERT INTO `user`(`nama`, `username`, `password`, 'email', 'notelp', `level`)
+  VALUES ('$nama','$username','$password','$email','$notelp',$level)";
+  mysqli_query($con,$sql);
+  ?>
+  <script type="text/javascript">
+  alert("data berhasil ditambahkan");
+  </script>
+  <?php
+}
+
+
+?>

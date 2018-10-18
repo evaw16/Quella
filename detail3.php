@@ -30,9 +30,9 @@
   <div class="row">
     <div class="col-sm-3">
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="assets/img/c.jpg" alt="Card image" width="50%">
+        <img class="card-img-top" src="assets/img/c.jpg" alt="Card image" width="75%">
         <div class="card-body">
-          <h4 class="card-title">Kerudung Anak Instan</h4>
+          <h4 class="card-title">Kaila Latasya</h4>
           <p class="card-text">Rp. 49.000,-</p>
           <!-- <a href="detail4.php" class="btn btn-primary">See More</a> -->
         </div>
@@ -40,9 +40,9 @@
     </div>
     <div class="col-sm-3">
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="assets/img/c1.jpg" alt="Card image" width="50%">
+        <img class="card-img-top" src="assets/img/c1.jpg" alt="Card image" width="75%">
         <div class="card-body">
-          <h4 class="card-title">Scarf</h4>
+          <h4 class="card-title">Kaila Lamilly</h4>
           <p class="card-text">Rp. 50.999,-</p>
           <!-- <a href="detail5.php" class="btn btn-primary">See More</a> -->
         </div>
@@ -50,20 +50,20 @@
     </div>
     <div class="col-sm-3">
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="assets/img/c2.jpg" alt="Card image" width="50%">
+        <img class="card-img-top" src="assets/img/c2.jpg" alt="Card image" width="75%">
         <div class="card-body">
-          <h4 class="card-title">Satin</h4>
-          <p class="card-text">Rp. 79.999,-</p>
+          <h4 class="card-title">Kaila Linea</h4>
+          <p class="card-text">Rp. 69.999,-</p>
           <!-- <a href="detail6.php" class="btn btn-primary">See More</a> -->
         </div>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="assets/img/c3.jpg" alt="Card image" width="50%">
+        <img class="card-img-top" src="assets/img/c3.jpg" alt="Card image" width="75%">
         <div class="card-body">
-          <h4 class="card-title">Satin</h4>
-          <p class="card-text">Rp. 79.999,-</p>
+          <h4 class="card-title">Kaila Labetha</h4>
+          <p class="card-text">Rp. 49.999,-</p>
           <!-- <a href="detail6.php" class="btn btn-primary">See More</a> -->
         </div>
       </div>

@@ -1,3 +1,6 @@
+<?php
+require_once("init.php");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -61,23 +64,23 @@
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
             </div>
             <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" name="password" placeholder="Enter Password" required>
             </div>
-            <div class="checkbox">
+            <!-- <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
+          <!-- <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p> -->
         </div>
       </div>
     </div>
@@ -204,6 +207,34 @@
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<?php
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
+  // $pass = $_POST['password'];
+  // if ($user == "papuma" && $pass == "papuma") {
+  // 	header("Location:adminUtama.php");
+  // }
+  $sql = "select * from user where username = '$username' and password = '$password'";
+  $result = mysqli_query($con,$sql);
+  if (mysqli_num_rows($result)>0) {
+    $row = mysqli_fetch_assoc($result);
+    if ($row['level'] == 1) {
+      header("Location:detail1pembeli.php");
+    } else if ($row['level'] == 2) {
+      header("Location:penjual.php");
+    }
+  } else{
+    ?>
+    <script type="text/javascript">
+    alert("Login Gagal, Username atau Password salah");
+    </script>
+    <?php
+  }
+}
+
+?>
 </body>
 
 </html>

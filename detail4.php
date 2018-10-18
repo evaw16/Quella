@@ -30,7 +30,7 @@
     <div class="card" style="width:400px">
       <img class="card-img-top" src="assets/img/ucul.jpg" alt="Card image" width="75%">
       <div class="card-body">
-        <h4 class="card-title">Malana Silver Meccanism</h4>
+        <h4 class="card-title">Instan White</h4>
         <p class="card-text">Rp. 99.000,-</p>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="card" style="width:400px">
       <img class="card-img-top" src="assets/img/ucul1.jpg" alt="Card image" width="75%">
       <div class="card-body">
-        <h4 class="card-title">Malana Salem Meccanism</h4>
+        <h4 class="card-title">Instan Navy</h4>
         <p class="card-text">Rp. 99.000,-</p>
       </div>
     </div>
@@ -48,7 +48,7 @@
     <div class="card" style="width:400px">
       <img class="card-img-top" src="assets/img/ucul2.jpg" alt="Card image" width="75%">
       <div class="card-body">
-        <h4 class="card-title">Malana Magenta R S Meccanism</h4>
+        <h4 class="card-title">Instan Grey</h4>
         <p class="card-text">Rp. 99.000,-</p>
       </div>
     </div>
@@ -57,7 +57,7 @@
     <div class="card" style="width:400px">
       <img class="card-img-top" src="assets/img/ucul4.jpg" alt="Card image" width="75%">
       <div class="card-body">
-        <h4 class="card-title">Malana Khaki Meccanism</h4>
+        <h4 class="card-title">Instan Black</h4>
         <p class="card-text">Rp. 99.000,-</p>
       </div>
     </div>
