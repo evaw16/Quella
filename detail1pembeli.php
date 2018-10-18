@@ -25,58 +25,51 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" id="myBtn"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+          <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
         </ul>
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header" style="padding:35px 50px;">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-              </div>
-              <div class="modal-body" style="padding:40px 50px;">
-                <form role="form">
-                  <div class="form-group">
-                    <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                    <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                    <input type="text" class="form-control" id="psw" placeholder="Enter password">
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" value="" checked>Remember me</label>
-                  </div>
-                  <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <p>Not a member? <a href="#">Sign Up</a></p>
-                <p>Forgot <a href="#">Password?</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
       </nav>
     </div>
   </div>
 </div>
 <center style="font-size:35px;">Meccanism</center>
-<center>
+<div class="col-sm-3">
   <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/a2.jpg" alt="Card image" width="75%">
+    <img class="card-img-top" src="assets/img/a1.jpg" alt="Card image" width="75%">
     <div class="card-body">
-      <h4 class="card-title">Meccanism</h4>
+      <h4 class="card-title">Malana Silver Meccanism</h4>
       <p class="card-text">Rp. 99.000,-</p>
-      <p class="card-text">Warna: Baby Pink, Merah Maroon, Hitam, Putih</p>
-      <p class="card-text">Kain: </p>
     </div>
   </div>
-  <br>
-</center>
+</div>
+<div class="col-sm-3">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="assets/img/a2.png" alt="Card image" width="75%">
+    <div class="card-body">
+      <h4 class="card-title">Malana Salem Meccanism</h4>
+      <p class="card-text">Rp. 99.000,-</p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-3">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="assets/img/a3.jpg" alt="Card image" width="75%">
+    <div class="card-body">
+      <h4 class="card-title">Malana Magenta R S Meccanism</h4>
+      <p class="card-text">Rp. 99.000,-</p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-3">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="assets/img/a4.jpg" alt="Card image" width="75%">
+    <div class="card-body">
+      <h4 class="card-title">Malana Khaki Meccanism</h4>
+      <p class="card-text">Rp. 99.000,-</p>
+    </div>
+  </div>
+</div>
+<br>
+
 <div class="form" style="margin-left:400px;">
   <form class="" action="index.php" method="post">
     <label for="">Jumlah Pemesanan</label><br>

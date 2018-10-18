@@ -65,7 +65,7 @@ button.btn.btn-default.navbar-btn {
   background-color: #A29786;
 }
 .card{
-  border: 1px solid #D2B48C;
+  border: 0px solid #D2B48C;
 }
 .form input[type="number"]{
   width: 500px;

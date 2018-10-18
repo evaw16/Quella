@@ -20,31 +20,55 @@
         <div class="collapse navbar-collapse fixed-on-top" id="navcol-1">
           <ul class="nav navbar-nav">
             <li role="presentation"><a href="index.php">Home</a></li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
-</div>
-<center style="font-size:35px;">Meccanism</center>
-<center>
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/a2.jpg" alt="Card image" width="75%">
-    <div class="card-body">
-      <h4 class="card-title">Meccanism</h4>
-      <p class="card-text">Rp. 99.000,-</p>
-      <p class="card-text">Warna: Baby Pink, Merah Maroon, Hitam, Putih</p>
-      <p class="card-text">Kain: </p>
+  <center style="font-size:35px;">Meccanism</center><br>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/a1.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Silver Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/a2.png" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Salem Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/a3.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Magenta R S Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/a4.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Khaki Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
     </div>
   </div>
   <br>
-</center>
-
-<script>
-$(document).ready(function(){
-  $("#myBtn").click(function(){
-    $("#myModal").modal();
+  <script>
+  $(document).ready(function(){
+    $("#myBtn").click(function(){
+      $("#myModal").modal();
+    });
   });
-});
 </script>
 
 </body>

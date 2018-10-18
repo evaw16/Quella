@@ -20,44 +20,55 @@
         <div class="collapse navbar-collapse fixed-on-top" id="navcol-1">
           <ul class="nav navbar-nav">
             <li role="presentation"><a href="index.php">Home</a></li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
-</div>
-<center style="font-size:35px;">Kerudung Anak Instan</center>
-<center>
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/ucul3.jpg" alt="Card image" width="75%">
-    <div class="card-body">
-      <h4 class="card-title">Kerudung Anak Instan</h4>
-      <p class="card-text">Rp. 49.000,-</p>
-      <p class="card-text">Warna:Hitam, Putih, Coklat, Navy</p>
-      <p class="card-text">Kain: </p>
+  <center style="font-size:35px;">Kerudung Anak Instan</center><br>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/ucul.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Silver Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/ucul1.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Salem Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/ucul2.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Magenta R S Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="assets/img/ucul4.jpg" alt="Card image" width="75%">
+      <div class="card-body">
+        <h4 class="card-title">Malana Khaki Meccanism</h4>
+        <p class="card-text">Rp. 99.000,-</p>
+      </div>
     </div>
   </div>
   <br>
-</center>
-<div class="form" style="margin-left:400px;">
-  <form class="" action="index.php" method="post">
-    <label for="">Jumlah Pemesanan</label><br>
-    <input type="number" name="jumlah" value="" placeholder="Jumlah Pemesanan">
-  </form>
-  <form class="" action="index.php" method="post">
-    <label for="">Pilih Warna</label><br>
-    <input type="number" name="jumlah" value="" placeholder="Jumlah Pemesanan">
-  </form>
-  <br>
-  <input type="submit" name="" value="Masukkan ke Keranjang">
-</div>
-
-
-<script>
-$(document).ready(function(){
-  $("#myBtn").click(function(){
-    $("#myModal").modal();
+  <script>
+  $(document).ready(function(){
+    $("#myBtn").click(function(){
+      $("#myModal").modal();
+    });
   });
-});
 </script>
 
 </body>
