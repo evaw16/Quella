@@ -3,7 +3,6 @@ require_once 'init.php';
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@ require_once 'init.php';
 </head>
 <center>
   <div class="register">
-    <body><img src="assets/img/1-1.png" id="aa" width="20%">
+    <body style="background:url('assets/img/xx.png')"><img src="assets/img/1-1.png" id="aa" width="20%">
       <br><br>Daftar akun baru sekarang
       <br><br>
       <div class="form">
@@ -44,31 +43,28 @@ require_once 'init.php';
         <br>
         <br>
 
-        <input type="submit" name="submit" value="DAFTAR">
+        <input type="submit" name="submit" value="DAFTAR" style="width: 100px; height: 50px; border-radius: 10px;
+        background-color: #8B4513; color: #fff; padding: 10px; margin-left:300px;">
+        <a href="index.php"><button type="button" name="button" style="width: 100px; height: 50px; border-radius: 10px;
+        background-color: #8B4513; color: #fff; padding: 10px;">BATAL</button></a>
       </div>
     </div>
   </center>
 </body>
 </html>
 
-<?php
-if ($_POST['submit']) {
-  $nama = $_POST['name'];
-  $username = $_POST['username'];
-  $password = md5 ($_POST['password']);
-  $email = $_POST['email'];
-  $notelp = $_POST['notelp'];
-  $level = 2;
+<!-- // if ($_POST['submit']) {
+// $nama = $_POST['name'];
+// $username = $_POST['username'];
+// $password = md5 ($_POST['password']);
+// $email = $_POST['email'];
+// $notelp = $_POST['notelp'];
+// $level = 2;
 
-  $sql = "INSERT INTO `user`(`nama`, `username`, `password`, 'email', 'notelp', `level`)
-  VALUES ('$nama','$username','$password','$email','$notelp',$level)";
-  mysqli_query($con,$sql);
-  ?>
-  <script type="text/javascript">
-  alert("data berhasil ditambahkan");
-  </script>
-  <?php
-}
-
-
-?>
+// $sql = "INSERT INTO `user`(`nama`, `username`, `password`, 'email', 'notelp', `level`)
+// VALUES ('$nama','$username','$password','$email','$notelp',$level)";
+// mysqli_query($con,$sql);
+//
+// <script type="text/javascript">
+// alert("data berhasil ditambahkan");
+// </script> -->

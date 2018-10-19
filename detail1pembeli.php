@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse fixed-on-top" id="navcol-1">
           <ul class="nav navbar-nav">
             <li role="presentation"><a href="index.php">Home</a></li>
-            <li role="presentation"><a href="#">Keranjang</a></li>
+            <li role="presentation"><a href="keranjang.php">Keranjang</a></li>
             <li role="presentation"><a href="#">Transaksi</a></li>
           </li>
         </ul>
@@ -38,6 +38,7 @@
     <div class="card-body">
       <h4 class="card-title">Malana Silver Meccanism</h4>
       <p class="card-text">Rp. 99.000,-</p>
+      <a href="order1.php" class="btn btn-primary">Beli</a>
     </div>
   </div>
 </div>
@@ -47,6 +48,7 @@
     <div class="card-body">
       <h4 class="card-title">Malana Salem Meccanism</h4>
       <p class="card-text">Rp. 99.000,-</p>
+      <a href="order1.php" class="btn btn-primary">Beli</a>
     </div>
   </div>
 </div>
@@ -56,6 +58,7 @@
     <div class="card-body">
       <h4 class="card-title">Malana Magenta R S Meccanism</h4>
       <p class="card-text">Rp. 99.000,-</p>
+      <a href="order1.php" class="btn btn-primary">Beli</a>
     </div>
   </div>
 </div>
@@ -65,24 +68,11 @@
     <div class="card-body">
       <h4 class="card-title">Malana Khaki Meccanism</h4>
       <p class="card-text">Rp. 99.000,-</p>
+      <a href="order1.php" class="btn btn-primary">Beli</a>
     </div>
   </div>
 </div>
 <br>
-
-<div class="form" style="margin-left:400px;">
-  <form class="" action="index.php" method="post">
-    <label for="">Jumlah Pemesanan</label><br>
-    <input type="number" name="jumlah" value="" placeholder="Jumlah Pemesanan">
-  </form>
-  <form class="" action="index.php" method="post">
-    <label for="">Pilih Warna</label><br>
-    <input type="number" name="jumlah" value="" placeholder="Jumlah Pemesanan">
-  </form>
-  <br>
-  <input type="submit" name="" value="Masukkan ke Keranjang">
-</div>
-
 
 <script>
 $(document).ready(function(){

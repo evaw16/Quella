@@ -21,13 +21,13 @@
           <ul class="nav navbar-nav">
             <li role="presentation"><a href="index.php">Home</a></li>
             <!-- <li role="presentation"><a href="#">Kelola Produk</a></li> -->
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Kelola Produk<span class="caret"></span></a>
+            <li class="active" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Kelola Produk<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li class="disabled" role="presentation">
                   <a href="#"> </a>
                 </li>
                 <li role="presentation"><a href="#">Input Data Produk</a></li>
-                <li role="presentation"><a href="#">Lihat Data Produk</a></li>
+                <li role="presentation"><a href="lihatdp.php">Lihat Data Produk</a></li>
                 <li class="dropdown-header" role="presentation"> </li>
                 <li role="presentation">
                   <a href="#"> </a>
