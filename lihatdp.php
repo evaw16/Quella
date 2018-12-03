@@ -1,3 +1,7 @@
+<?php
+require_once 'init.php';
+ob_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -38,61 +42,58 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+          <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
         </ul>
       </nav>
     </div>
   </div>
 </div>
-<div class="col-sm-3">
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/a1.jpg" alt="Card image" width="75%">
-    <div class="card-body">
-      <h4 class="card-title">Malana Silver Meccanism</h4>
-      <a href="#" class="btn btn-primary">Ubah</a>
-      <a href="#" class="btn btn-primary">Hapus</a>
+<div class="row">
+  <?php
+  $sql = "select * from produk";
+  $result = $con->query($sql);
+  foreach ($result as $item) {
+    ?>
+    <div class="col-sm-3">
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="img-produk/<?=$item['gambar_produk']?>" alt="Card image" width="75%">
+        <div class="card-body">
+          <h4 class="card-title">Nama Produk:  <?=$item['nama_produk']?></h4>
+          <h4 class="card-title">Jumlah Stok:  <?=$item['jumlah_stok']?></h4>
+          <h4 class="card-title">Harga:  <?=$item['harga']?></h4>
+          <a href="ubah.php?id=<?=$item['id_produk']?>" class="btn btn-primary">ubah</a>
+          <a href="#" class="btn btn-primary">Hapus</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/a2.png" alt="Card image" width="75%">
-    <div class="card-body">
-      <h4 class="card-title">Malana Salem Meccanism</h4>
-      <a href="#" class="btn btn-primary">Ubah</a>
-      <a href="#" class="btn btn-primary">Hapus</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/a3.jpg" alt="Card image" width="75%">
-    <div class="card-body">
-      <h4 class="card-title">Malana Magenta R S Meccanism</h4>
-      <a href="#" class="btn btn-primary">Ubah</a>
-      <a href="#" class="btn btn-primary">Hapus</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="assets/img/a4.jpg" alt="Card image" width="75%">
-    <div class="card-body">
-      <h4 class="card-title">Malana Khaki Meccanism</h4>
-      <a href="#" class="btn btn-primary">Ubah</a>
-      <a href="#" class="btn btn-primary">Hapus</a>
-    </div>
-  </div>
+  <?php } ?>
+
 </div>
 <br>
-
-<script>
+<!-- <script>
 $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
 });
-</script>
-
+</script> -->
 </body>
 </html>
+<?php
+if (isset($_POST['submit'])) {
+  $id= $_GET['id_user'];
+  $gambar=$_POST['gambar_produk'];
+  $nama= $_POST['nama_produk'];
+  $jumlah= $_POST['jumlah_stok'];
+  $harga = $_POST['harga'];
+
+  $sql = "UPDATE `user` SET `gambar_produk`='$gambar',`nama_produk`='$nama',`jumlah_stok`='$jumlah',`harga`='$harga' WHERE `id_user` = $id";
+
+  // "UPDATE `aktor` SET(`nama`,`alamat`,`no. hp`,`username`,`password`)
+  // VALUES ('$nama', '$alamat','$notelp','$username','$password')WHERE id_pegawai=$id";
+  mysqli_query($con,$sql);
+  header("location:ubah.php");
+  exit();
+}
+
+?>

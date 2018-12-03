@@ -16,55 +16,55 @@ require_once 'init.php';
       <br><br>Daftar akun baru sekarang
       <br><br>
       <div class="form">
-        <form class="" action="index.php" method="post">
+        <form class=""method="post">
           <label for=""></label>
           <input type="text" name="name" value="" placeholder="Nama" required>
-        </form>
-        <br>
-        <form class="" action="index.php" method="post">
+          <br>
+          <br>
           <label for=""></label>
           <input type="text" name="username" value="" placeholder="Username" required>
-        </form>
-        <br>
-        <form class="" action="index.php" method="post">
+          <br>
+          <br>
           <label for=""></label>
           <input type="password" name="pass" value="" placeholder="Password" required>
-        </form>
-        <br>
-        <form class="" action="index.php" method="post">
+          <br>
+          <br>
           <label for=""></label>
           <input type="email" name="email" value="" placeholder="Email" required>
-        </form>
-        <br>
-        <form class="" action="index.php" method="post">
+          <br>
+          <br>
           <label for=""></label>
           <input type="number" name="hp" value="" placeholder="Nomor Handphone" required>
-        </form>
-        <br>
-        <br>
+          <br>
+          <br>
+          <input type="radio" name="user"
+          value="1">Penjual
+          <input type="radio" name="user"
+          value="2">Pembeli
 
-        <input type="submit" name="submit" value="DAFTAR" style="width: 100px; height: 50px; border-radius: 10px;
-        background-color: #8B4513; color: #fff; padding: 10px; margin-left:300px;">
-        <a href="index.php"><button type="button" name="button" style="width: 100px; height: 50px; border-radius: 10px;
-        background-color: #8B4513; color: #fff; padding: 10px;">BATAL</button></a>
+          <input type="submit" name="submit" value="DAFTAR" style="width: 100px; height: 50px; border-radius: 10px;
+          background-color: #8B4513; color: #fff; padding: 10px; margin-left:300px;">
+          <a href="index.php"><button type="button" name="button" style="width: 100px; height: 50px; border-radius: 10px;
+          background-color: #8B4513; color: #fff; padding: 10px;">BATAL</button></a>
+        </form>
       </div>
     </div>
   </center>
 </body>
 </html>
+<?php
+if (isset($_POST['submit'])) {
+  $nama = $_POST['name'];
+  $username = $_POST['username'];
+  $password = md5 ($_POST['pass']);
+  $email = $_POST['email'];
+  $notelp = $_POST['hp'];
+  $level = $_POST ['user'];
 
-<!-- // if ($_POST['submit']) {
-// $nama = $_POST['name'];
-// $username = $_POST['username'];
-// $password = md5 ($_POST['password']);
-// $email = $_POST['email'];
-// $notelp = $_POST['notelp'];
-// $level = 2;
-
-// $sql = "INSERT INTO `user`(`nama`, `username`, `password`, 'email', 'notelp', `level`)
-// VALUES ('$nama','$username','$password','$email','$notelp',$level)";
-// mysqli_query($con,$sql);
-//
-// <script type="text/javascript">
-// alert("data berhasil ditambahkan");
-// </script> -->
+  $sql = "INSERT INTO `user`(`nama`, `username`, `password`, `email`, `notelp`, `level`)
+  VALUES ('$nama','$username','$password','$email','$notelp',$level)";
+  mysqli_query($con,$sql);
+  header("location: index.php");
+  exit();
+}
+?>

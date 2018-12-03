@@ -176,26 +176,7 @@ ob_start();
     <br>
     <hr />
     <br>
-    <!-- <div class="col-sm-3">
-    <b>Butuh Bantuan?</b>
-    <br><b>Hubungi Kami</b>
-    <br>08:00 - 21:00 WIB
-    <br>(Hari Kerja)
-    <br>09:00 - 18.00 WIB
-    <br>(Weekend)
-    <br><br>+6285-2651-3342
-    <br>+6285-2811-3512
-    <br>quellahijab@gmail.com
-    <br><br><br><br>
-  </div>
-  <div class="col-sm-3">
-  Bantuan
-</div>
-<div class="col-sm-3">
-Bantuan
-</div>
-<div style="border: 1px grey solid; height: 200px; width: 0px;">
-</div> -->
+
 </center>
 
 
@@ -205,16 +186,22 @@ Bantuan
 <?php
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
-  $password = $_POST['password'];
-  if ($username == "penjual" || $password == "penjual"){
-    header("location:penjual.php");
-    exit();
-  }else if ($username == "pembeli" || $password == "pembeli") {
-    header("location:pembeli.php");
-    exit();
+  $password = md5($_POST['password']);
+  $sql = "select * from user where username = '$username' and password = '$password'";
+  $result = mysqli_query($con,$sql);
+  if (mysqli_num_rows($result)>0) {
+    $row = mysqli_fetch_assoc($result);
+    if ($row['level'] == 1) {
+      $_SESSION['id_user'] = $row['id_user'];
+      header("Location:penjual.php");
+    } else if ($row['level'] == 2) {
+      $_SESSION['id_user'] = $row['id_user'];
+      $_SESSION['username'] = $row['username'];
+      header("Location:pembeli.php");
+
+    }
   }
 }
 ?>
 </body>
-
 </html>

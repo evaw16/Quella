@@ -2,7 +2,7 @@
 <html>
 <?php
 require_once 'init.php';
- ?>
+?>
 
 <head>
   <meta charset="utf-8">
@@ -49,53 +49,67 @@ require_once 'init.php';
 </div>
 <center>
   <div class="register">
-    <body>
-      <br>Input Data Produk
-      <br><br>
-      <div class="form">
+    <br>Input Data Produk
+    <br><br>
+    <div class="form">
+      <?php
+      $id = $_GET['id'];
+      $sql = "select * from produk where id_produk = $id";
+      $result = $con->query($sql);
+      foreach ($result as $item ) {
+        ?>
         <form method="post" enctype="multipart/form-data">
+          <input type="hidden" name="id_produk" value="<?=$item['id_produk']?>">
           <label for="">Nama</label><br>
-          <input type="text" name="nama" value="" placeholder="Nama">
+          <input type="text" name="nama_produk" value="<?=$item['nama_produk']?>" placeholder="Nama">
           <br>
           <label for="">Jumlah Produk</label><br>
-          <input type="number" name="jumlah" value="" placeholder="Masukkan Jumlah Produk">
+          <input type="number" name="jumlah_stok" value="<?=$item['jumlah_stok']?>" placeholder="Masukkan Jumlah Produk">
           <br>
           <label for="">Harga Produk</label><br>
-          <input type="number" name="harga" value="" placeholder="Masukkan Harga">
+          <input type="number" name="harga" value="<?=$item['harga']?>" placeholder="Masukkan Harga">
           <br>
           <label for="">Gambar</label><br>
-          <input type="file" name="gambar" value="" placeholder="Gambar">
+          <img src="img-produk/<?=$item['gambar_produk']?>" style="width:100px; height:100px;">
+          <br><br>
+          <input type="file" name="gambar" value="<?=$item['gambar_produk']?>" placeholder="Gambar">
           <br>
           <input type="submit" name="submit" value="Masukkan">
         </form>
-      </div>
+        <?php
+      }
+      ?>
     </div>
-  </center>
-  <script>
-  $(document).ready(function(){
-    $("#myBtn").click(function(){
-      $("#myModal").modal();
-    });
-  });
-</script>
-</body>
-</html>
-<?php
-if (isset($_POST['submit'])) {
-  $id_user = $_SESSION['id_user'];
-  $nama = $_POST['nama'];
-  $jumlah = $_POST['jumlah'];
-  $harga = $_POST['harga'];
-  $gambar = $_FILES['gambar']['name'];
-  $tmp = $_FILES['gambar']['tmp_name'];
-  $produk = date ('dmYHis') . $gambar;
-  $path = "img-produk/" .$produk;
-  if (move_uploaded_file($tmp, $path)) {
-    $sql = "INSERT INTO `produk`(`id_user`,`nama_produk`, `jumlah_stok`, `harga`, `gambar_produk`)
-    VALUES ('$id_user','$nama',$jumlah,$harga,'$produk')";
-    mysqli_query($con,$sql);
-    header("location: penjual.php");
-    exit();
+  </body>
+  </html>
+  <?php
+
+  if (isset($_POST['submit'])) {
+    $id= $_POST['id_produk'];
+    $nama= $_POST['nama_produk'];
+    $jumlah= $_POST['jumlah_stok'];
+    $harga = $_POST['harga'];
+    $gambar = $_FILES['gambar']['name'];
+    $tmp = $_FILES['gambar']['tmp_name'];
+    $produk = date ('dmYHis') . $gambar;
+    $path = "img-produk/" .$produk;
+    $query = "select gambar_produk from produk where id_produk = $id";
+    $resi = $con->query($sql);
+    foreach ($resi as $item) {
+      $img = $item['gambar_produk'];
+    }
+    unlink('img-produk/'.$img);
+    if (move_uploaded_file($tmp, $path)) {
+
+
+      $sql = "UPDATE `produk` SET `gambar_produk`='$produk',`nama_produk`='$nama',`jumlah_stok`='$jumlah',`harga`='$harga' WHERE `id_produk` = $id";
+
+      // "UPDATE `aktor` SET(`nama`,`alamat`,`no. hp`,`username`,`password`)
+      // VALUES ('$nama', '$alamat','$notelp','$username','$password')WHERE id_pegawai=$id";
+      mysqli_query($con,$sql);
+      header("location:lihatdp.php");
+      exit();
+    }
   }
-}
-?>
+
+  ?>

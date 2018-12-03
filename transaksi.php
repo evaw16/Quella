@@ -37,7 +37,7 @@
       <div class="container-fluid">
         <div class="collapse navbar-collapse fixed-on-top" id="navcol-1">
           <ul class="nav navbar-nav">
-            <li role="presentation"><a href="index.php">Home</a></li>
+            <li role="presentation"><a href="pembeli.php">Home</a></li>
             <li role="presentation"><a href="keranjang.php">Keranjang</a></li>
             <li class="active" role="presentation"><a href="#">Transaksi</a></li>
           </li>
