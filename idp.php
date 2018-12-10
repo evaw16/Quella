@@ -1,9 +1,30 @@
-<!DOCTYPE html>
-<html>
 <?php
-require_once 'init.php';
+require('init.php');
+if(isset($_POST['nama'])){
+  $id_user = $_SESSION['id_user'];
+  $nama = $_POST['nama'];
+  $jumlah = $_POST['jumlah'];
+  $harga = $_POST['harga'];
+
+  $gambar = $_FILES['gambar']['name'];
+  $tmp = $_FILES['gambar']['tmp_name'];
+  $produk = date ('dmYHis') . $gambar;
+  $path = "img-produk/" .$produk;
+  if (move_uploaded_file($tmp, $path)) {
+    $sql = "INSERT INTO `produk`
+    VALUES (NULL, '$id_user', '$nama', '$jumlah', '$produk', '$harga')";
+    mysqli_query($con,$sql);
+    header("location: penjual.php");
+    $_SESSION['message'] = 'sukses menyimpan';
+  }
+ // $_SESSION['message'] = 'tes';
+}
+else{}
+
  ?>
 
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +35,37 @@ require_once 'init.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background:url('assets/img/xx.png')" width="20%">
+    <script type="text/javascript">
+      $(document).ready(function (e) {
+    $("#inputdata").on('submit',(function(e) {
+            e.preventDefault();
+            $.ajax({
+              url : 'http://localhost/Quellaxx/idp.php',
+              method: "POST",
+              data: new FormData(this),
+              contentType: false,
+              cache: false,
+              processData: false,
+              beforeSend:function(){
+
+                $("#head").html("Sedang Mengunggah Data");
+
+              },
+              success:function(result){
+                $("#head").html("Data Berhasil Ditambahkan");
+                 setTimeout(function() {
+                  window.location = "http://localhost/Quellaxx/lihatdp.php"}, 2000);
+                 // location.reload();
+              },
+              error: function(xhr, Status, err) {
+                $("#head").html("Terjadi error : "+Status);
+              }
+
+            });
+  }));
+    });
+</script>
   <center><img src="assets/img/1-1.png" width="25%" style="margin-top:20px;"></center>
   <br>
   <div class="container">
@@ -31,13 +82,9 @@ require_once 'init.php';
                 </li>
                 <li role="presentation"><a href="#">Input Data Produk</a></li>
                 <li role="presentation"><a href="lihatdp.php">Lihat Data Produk</a></li>
-                <li class="dropdown-header" role="presentation"> </li>
-                <li role="presentation">
-                  <a href="#"> </a>
-                </li>
               </ul>
             </li>
-            <li role="presentation"><a href="#">Transaksi</a></li>
+            <li role="presentation"><a href="transaksi.php">Transaksi</a></li>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -49,53 +96,34 @@ require_once 'init.php';
 </div>
 <center>
   <div class="register">
-    <body>
-      <br>Input Data Produk
+<?php
+if(isset($_SESSION['message'])){
+echo $_SESSION['message'];
+unset($_SESSION['message']);
+}
+?>
+      <br><div id="head">Input Data Produk</div>
       <br><br>
       <div class="form">
-        <form method="post" enctype="multipart/form-data">
+        <form enctype="multipart/form-data" id="inputdata" method="POST">
           <label for="">Nama</label><br>
-          <input type="text" name="nama" value="" placeholder="Nama">
+          <input type="text" name="nama" value="" placeholder="Nama" required>
           <br>
           <label for="">Jumlah Produk</label><br>
-          <input type="number" name="jumlah" value="" placeholder="Masukkan Jumlah Produk">
+          <input min="1" type="number" name="jumlah" value="" placeholder="Masukkan Jumlah Produk" required>
           <br>
           <label for="">Harga Produk</label><br>
-          <input type="number" name="harga" value="" placeholder="Masukkan Harga">
+          <input min="1" type="number" name="harga" value="" placeholder="Masukkan Harga" required>
           <br>
           <label for="">Gambar</label><br>
-          <input type="file" name="gambar" value="" placeholder="Gambar">
+          <input  type="file" name="gambar" value="" placeholder="Gambar" required>
           <br>
           <input type="submit" name="submit" value="Masukkan">
+          <br><br><br>
         </form>
       </div>
     </div>
   </center>
-  <script>
-  $(document).ready(function(){
-    $("#myBtn").click(function(){
-      $("#myModal").modal();
-    });
-  });
-</script>
+
 </body>
 </html>
-<?php
-if (isset($_POST['submit'])) {
-  $id_user = $_SESSION['id_user'];
-  $nama = $_POST['nama'];
-  $jumlah = $_POST['jumlah'];
-  $harga = $_POST['harga'];
-  $gambar = $_FILES['gambar']['name'];
-  $tmp = $_FILES['gambar']['tmp_name'];
-  $produk = date ('dmYHis') . $gambar;
-  $path = "img-produk/" .$produk;
-  if (move_uploaded_file($tmp, $path)) {
-    $sql = "INSERT INTO `produk`(`id_user`,`nama_produk`, `jumlah_stok`, `harga`, `gambar_produk`)
-    VALUES ('$id_user','$nama',$jumlah,$harga,'$produk')";
-    mysqli_query($con,$sql);
-    header("location: penjual.php");
-    exit();
-  }
-}
-?>

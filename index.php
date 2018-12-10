@@ -24,71 +24,55 @@ ob_start();
         <div class="collapse navbar-collapse fixed-on-top" id="navcol-1">
           <ul class="nav navbar-nav">
             <li class="active" role="presentation"><a href="#">Home</a></li>
-            <!-- <li role="presentation"><a href="#">Collections </a></li> -->
-            <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Brand<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <li class="disabled" role="presentation">
-            <a href="#"> </a>
-          </li>
-          <li role="presentation"><a href="#">Zoya</a></li>
-          <li role="presentation"><a href="#">Shafira </a></li>
-          <li role="presentation"><a href="#">elzatta </a></li>
-          <li role="presentation"><a href="#">Meccanism </a></li>
-          <li role="presentation"><a href="#">Rabbani </a></li>
-          <li class="dropdown-header" role="presentation"> </li>
-          <li role="presentation">
-          <a href="#"> </a>
-        </li>
-      </ul>
-    </li> -->
-  </ul>
-  <form class="navbar-form navbar-left" action="/action_page.php">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search" style="width:400px;">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-  <ul class="nav navbar-nav navbar-right">
-    <li><a href="regist.php"><span class="glyphicon glyphicon-user"></span> DAFTAR</a></li>
-    <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
-  </ul>
-  <!-- login modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          </ul>
+          <form class="navbar-form navbar-left" action="/action_page.php">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" style="width:400px;">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="regist.php"><span class="glyphicon glyphicon-user"></span> DAFTAR</a></li>
+            <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+          </ul>
+          <!-- login modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                  <form role="form" method="post">
+                    <div class="form-group">
+                      <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+                      <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <!-- <div class="checkbox">
+                    <label><input type="checkbox" value="" checked>Remember me</label>
+                  </div> -->
+                  <input type="submit" class="btn btn-success btn-block" value="Login" name="submit">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <!-- <p>Not a member? <a href="#">Sign Up</a></p>
+                <p>Forgot <a href="#">Password?</a></p> -->
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form" method="post">
-            <div class="form-group">
-              <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
-            </div>
-            <div class="form-group">
-              <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
-            </div>
-            <!-- <div class="checkbox">
-            <label><input type="checkbox" value="" checked>Remember me</label>
-          </div> -->
-          <input type="submit" class="btn btn-success btn-block" value="Login" name="submit">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-        <!-- <p>Not a member? <a href="#">Sign Up</a></p>
-        <p>Forgot <a href="#">Password?</a></p> -->
       </div>
     </div>
-  </div>
-</div>
-</div>
-</div>
-</nav>
+  </nav>
 </div>
 <div id="elza">
   <div class="carousel slide" data-ride="carousel" id="carousel-1">
@@ -141,67 +125,43 @@ ob_start();
       </div>
     </div>
     <br>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="assets/img/ucul.jpg" alt="Card image" width="50%">
-          <div class="card-body">
-            <h4 class="card-title">Kerudung Anak Instan</h4>
-            <p class="card-text">Rp. 49.000,-</p>
-            <a href="detail4.php" class="btn btn-primary">See More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="assets/img/sc.jpg" alt="Card image" width="50%">
-          <div class="card-body">
-            <h4 class="card-title">Scarf</h4>
-            <p class="card-text">Rp. 50.999,-</p>
-            <a href="detail5.php" class="btn btn-primary">See More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="assets/img/satin.jpg" alt="Card image" width="50%">
-          <div class="card-body">
-            <h4 class="card-title">Satin</h4>
-            <p class="card-text">Rp. 79.999,-</p>
-            <a href="detail6.php" class="btn btn-primary">See More</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <br>
     <hr />
     <br>
 
-</center>
+  </center>
 
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-<?php
-if (isset($_POST['submit'])) {
-  $username = $_POST['username'];
-  $password = md5($_POST['password']);
-  $sql = "select * from user where username = '$username' and password = '$password'";
-  $result = mysqli_query($con,$sql);
-  if (mysqli_num_rows($result)>0) {
-    $row = mysqli_fetch_assoc($result);
-    if ($row['level'] == 1) {
-      $_SESSION['id_user'] = $row['id_user'];
-      header("Location:penjual.php");
-    } else if ($row['level'] == 2) {
-      $_SESSION['id_user'] = $row['id_user'];
-      $_SESSION['username'] = $row['username'];
-      header("Location:pembeli.php");
-
+  <?php
+  if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+    $sql = "select * from user where username = '$username' and password = '$password'";
+    $result = mysqli_query($con,$sql);
+    if (mysqli_num_rows($result)>0) {
+      $row = mysqli_fetch_assoc($result);
+      if ($row['level'] == 1) {
+        $_SESSION['id_user'] = $row['id_user'];
+        $_SESSION['nama'] = $row['nama'];
+        header("Location:penjual.php");
+      } else if ($row['level'] == 2) {
+        $_SESSION['id_user'] = $row['id_user'];
+        $_SESSION['nama'] = $row['nama'];
+        $_SESSION['username'] = $row['username'];
+        header("Location:pembeli.php");
+      }
+    } else{
+      ?>
+      <script type="text/javascript">
+      alert("Login Gagal, Username atau Password salah");
+      </script>
+      <?php
     }
   }
-}
-?>
+
+  ?>
 </body>
 </html>

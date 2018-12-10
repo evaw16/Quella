@@ -30,7 +30,16 @@ require_once 'init.php';
           <br>
           <br>
           <label for=""></label>
-          <input type="email" name="email" value="" placeholder="Email" required>
+          <input type="text" name="address" value="" placeholder="Alamat" required>
+          <br>
+          <br>
+          
+          <label for=""></label>
+          <input type="text" name="address" value="" placeholder="Provinsi" required>
+          <br>
+          <br>
+          <label for=""></label>
+          <input type="text" name="address" value="" placeholder="Kota" required>
           <br>
           <br>
           <label for=""></label>
@@ -50,21 +59,27 @@ require_once 'init.php';
       </div>
     </div>
   </center>
+  <?php
+  if (isset($_POST['submit'])) {
+    $nama = $_POST['name'];
+    $username = $_POST['username'];
+    $password = md5 ($_POST['pass']);
+    $alamat = $_POST['alamat'];
+    $provinsi = $_POST['provinsi'];
+    $kota = $_POST['kota'];
+    $notelp = $_POST['hp'];
+    $level = $_POST ['user'];
+
+    $sql = "INSERT INTO `user`(`nama`, `username`, `password`,`alamat`,`provinsi`,`kota`, `notelp`, `level`)
+    VALUES ('$nama','$username','$password','$email','$notelp',$level)";
+    mysqli_query($con,$sql);
+    ?>
+    <script type="text/javascript">
+    alert("Terima Kasih Sudah Mendaftar");
+    </script>
+    <?php
+    header("location: index.php");
+  }
+?>
 </body>
 </html>
-<?php
-if (isset($_POST['submit'])) {
-  $nama = $_POST['name'];
-  $username = $_POST['username'];
-  $password = md5 ($_POST['pass']);
-  $email = $_POST['email'];
-  $notelp = $_POST['hp'];
-  $level = $_POST ['user'];
-
-  $sql = "INSERT INTO `user`(`nama`, `username`, `password`, `email`, `notelp`, `level`)
-  VALUES ('$nama','$username','$password','$email','$notelp',$level)";
-  mysqli_query($con,$sql);
-  header("location: index.php");
-  exit();
-}
-?>

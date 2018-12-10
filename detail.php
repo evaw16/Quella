@@ -14,7 +14,7 @@ require_once 'init.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background:url('assets/img/xx.png')" width="20%">
   <center><img src="assets/img/1-1.png" width="25%" style="margin-top:20px;"></center>
   <br>
   <div class="container">
@@ -49,12 +49,14 @@ require_once 'init.php';
           <h4 class="card-title">Nama Produk:  <?=$item['nama_produk']?></h4>
           <h4 class="card-title">Jumlah Stok:  <?=$item['jumlah_stok']?></h4>
           <h4 class="card-title">Harga:  <?=$item['harga']?></h4>
-          <form class="" action="index.php" method="post">
+          <?php $harga = $item['harga'];?>
+          <form method="post">
             <label for="">Jumlah Pesanan</label><br>
-            <input type="number" name="jumlah" value="" placeholder="Jumlah Pesanan">
+            <input min="1" type="number" name="jumlah" value="" placeholder="Jumlah Pesanan" max="<?=$item['jumlah_stok']?>">
+            <input type="submit" name="submit" value="Masukkan ke Keranjang">
+
           </form>
           <br>
-          <input type="submit" name="" value="Masukkan ke Keranjang">
         </div>
       </div>
       <?php
@@ -62,8 +64,6 @@ require_once 'init.php';
     ?>
   </div>
 </center>
-
-
 <script>
 $(document).ready(function(){
   $("#myBtn").click(function(){
@@ -74,3 +74,38 @@ $(document).ready(function(){
 
 </body>
 </html>
+
+<?php
+  if (isset($_POST['submit'])) {
+    $jumlah = $_POST['jumlah'];
+
+    $iduser = $_SESSION['id_user'];
+    $id_produk = $_GET['id'];
+    $keranjang=0;
+    // $sql = "INSERT INTO `keranjang`( `id_user`, `tanggal`, `jumlah`, `total`) VALUES ($_SESSION['id_user'],curdate(),$jumlah,$total)";
+    $sql_check="SELECT COUNT(*) as keranjang,jumlah FROM keranjang WHERE id_user=$iduser and id_produk=$id_produk";
+    $res=mysqli_query($con,$sql_check);
+    $temp_jumlah=0;
+    foreach ($res as $item) {
+      $keranjang = $item['keranjang'];
+      $temp_jumlah=$item['jumlah'];
+    }
+    $jumlah+=$temp_jumlah; //$jumlah = $jumlah+$temp_jumlah
+    $total = $harga * $jumlah;
+
+
+    if ($keranjang==0) {
+
+      $sql = "INSERT INTO `keranjang`(`id_user`,`id_produk`, `tanggal`, `jumlah`, `total`) VALUES ($iduser,$id_produk,curdate(),$jumlah,$total)";
+      mysqli_query($con,$sql);
+      header("location: keranjang.php");
+    }
+    else {
+       $sql = "UPDATE keranjang SET jumlah=$jumlah,total=$total WHERE id_produk=$id_produk AND id_user =$iduser";
+       mysqli_query($con,$sql);
+
+    }
+
+    exit();
+}
+     ?>

@@ -42,7 +42,7 @@ require_once 'init.php';
           <ul class="nav navbar-nav">
             <li role="presentation"><a href="pembeli.php">Home</a></li>
             <li role="presentation"><a href="keranjang.php">Keranjang</a></li>
-            <li class="active" role="presentation"><a href="#">Transaksi</a></li>
+            <li class="active" role="presentation"><a href="ordermasuk.php">Transaksi</a></li>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -52,14 +52,16 @@ require_once 'init.php';
     </div>
   </div>
 </div>
-<center style="font-size:35px;">Transaksi</center><br>
+<center style="font-size:35px;">Order Masuk</center><br>
 <center>
   <table class="table table-bordered" style="margin-left:110px; width:950px;">
     <thead>
       <tr>
-        <th>Id Order</th>
-        <th>Tanggal</th>
+        <th>Nama Produk</th>
+        <th>Jumlah</th>
+        <th>Total Harga</th>
         <th>Status</th>
+        <th>Nama Pembeli</th>
       </tr>
     </thead>
     <tbody>
@@ -70,9 +72,11 @@ require_once 'init.php';
         ?>
         <tr>
           <td hidden><?=$item['id_user']?></td>
-          <td><?=$item['id_order']?></td>
-          <td><?=$item['tanggal']?></td>
+          <td><?=$item['nama_produk']?></td>
+          <td><?=$item['jumlah']?></td>
+          <td><?=$item['total']?></td>
           <td><?=$item['status']?></td>
+          <td><?=$item['nama']?></td>
           <!-- <td><a onclick="return confirm('Apakah Anda yakin ingin menghapus?')" href="hapus.php?id_user=</?=$item['id_user']?>">Hapus</a>
           || <a href="editAktor.php?id_pegawai=</?=$item['id_pegawai']?>">Ubah</a>
         </td> -->

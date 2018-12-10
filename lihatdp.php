@@ -15,7 +15,7 @@ ob_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background:url('assets/img/xx.png')" width="20%">
   <center><img src="assets/img/1-1.png" width="25%" style="margin-top:20px;"></center>
   <br>
   <div class="container">
@@ -38,7 +38,7 @@ ob_start();
                 </li>
               </ul>
             </li>
-            <li role="presentation"><a href="#">Transaksi</a></li>
+            <li role="presentation"><a href="transaksi.php">Transaksi</a></li>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -48,9 +48,11 @@ ob_start();
     </div>
   </div>
 </div>
+<center>
 <div class="row">
   <?php
-  $sql = "select * from produk";
+  $id = $_SESSION['id_user'];
+  $sql = "select * from produk where id_user = $id";
   $result = $con->query($sql);
   foreach ($result as $item) {
     ?>
@@ -62,19 +64,21 @@ ob_start();
           <h4 class="card-title">Jumlah Stok:  <?=$item['jumlah_stok']?></h4>
           <h4 class="card-title">Harga:  <?=$item['harga']?></h4>
           <a href="ubah.php?id=<?=$item['id_produk']?>" class="btn btn-primary">ubah</a>
-          <a href="#" class="btn btn-primary">Hapus</a>
+          <a onclick="return confirm('apakah data akan dihapus?')" href="hapus.php?id=<?=$item['id_produk']?>" class="btn btn-primary">Hapus</a>
         </div>
       </div>
     </div>
-  <?php } ?>
-
+    <?php
+  }
+  ?>
 </div>
+</center>
 <br>
 <!-- <script>
 $(document).ready(function(){
-  $("#myBtn").click(function(){
-    $("#myModal").modal();
-  });
+$("#myBtn").click(function(){
+$("#myModal").modal();
+});
 });
 </script> -->
 </body>
